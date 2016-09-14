@@ -18,7 +18,7 @@ vue.js大概是一个青量的MVVM框架（不依赖任何第三方库，所以�
 
 ## 运行
 直接运行index.html即可查看效果；
-或者[点这里](https://doterlin.github.io/blog/vuejs/vue_ajax_list_example)查看演示(由于github的https协议问题，这里使用假数据)
+或者[点这里](https://doterlin.github.io/blog/vuejs/vue_ajax_list_example)查看演示(建议切换为手机分辨率看，另由于github的https协议问题，这里使用假数据)
 
 ## 注意
 ajax用的是一个线上的可跨域地址
