@@ -1,0 +1,100 @@
+@charset "utf-8";
+/*reset 重置*/
+body,ul,ol,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,td,th,button,strong,em,select,video,canvas{margin:0;padding:0;}
+li{list-style:none;vertical-align:top;}
+table{ border-collapse:collapse;}
+textarea{resize:none;overflow:auto;}
+img{ border:none; vertical-align:middle;}
+em{ font-style:normal;}
+a{ text-decoration:none;}
+a,input{ -webkit-tap-highlight-color:rgba(0,0,0,0);/*ios android去除自带阴影的样式*/}
+input{outline:0px;}
+a, img {/* 禁止长按链接与图片弹出菜单 */-webkit-touch-callout: none; }
+html, body {/* 禁止选中文本(如无文本选中需求,此为必选项) */-webkit-user-select: none;  user-select: none;}
+html { font-size: 62.5%;} 
+body { font-size: 14px; font-size: 1.4rem; font-family:"Microsoft YaHei",Helvetica; margin:0; padding:0;}
+a{text-decoration: none;}
+
+.container{width:100%;}
+
+.tab{height:45px;background:#F2F2F2; width:100%; line-height:45px; position:relative;}
+.tab .tab-btn{color:#ccc; font-size:1.5rem; width:39%; white-space: nowrap; display:inline-block; text-align:center;transition:all 1s; -webkit-transition:all .4s;}
+.tab .on{color:#50E3CE;}
+.tab .tab-btn:nth-child(1){margin-left:7%;}
+.tab .tab-btn:nth-child(2){margin-left:7%;}
+.tab .line{background-color:#50E3CE; width:39%; height:2px; position:absolute; left:8%; top:43px; transition:all .4s ease-out; -webkit-transition:all .4s ease-out;}
+
+.rank{height:65px; line-height:65px; display:block;border-bottom:1px solid #E3E3E3; min-width:320px; white-space:nowrap;}
+.rank.hover{background:#E3E3E3;}
+.no-data{background:url(../../../images/no-data.png) no-repeat; width:80px; height:99px; background-size:80px 99px; margin: 12rem auto 0; display: block;}
+.no-data-th{background:url(../../../images/no-data-th.png) no-repeat; width:80px; height:103px; background-size:80px 103px; text-align: center; margin: 12rem auto 0; display: block;}
+.rank .left,.rank .center{float: left;}
+.rank .right{float:right; padding-right:10px;}
+.rank .left{text-align:center; height:65px; border-bottom:1px solid #fff; width:52px; font-size:12px; color:#50E4CE;}
+.left .icons{text-indent:-9999px; margin:21px 12px;}
+.center .portrait,.center .sex,.center .name,.center .level{ float:left; }
+.center .portrait{width: 41px; height: 65px; display: inline-block; overflow:hidden; vertical-align:middle; line-height:65px;}
+.center .portrait .por-img{border-radius:20px; background:#f2f2f2;}
+.center .name{margin-left:15px; color:#444;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.sex .icons{margin:25px 7px;}
+.level{margin:25px 0 24px 0; padding:0 6px; color:#fff; font-size:12px;}
+.level .icons{margin:3px 0 0 0; display:inline-block;}
+.level1{background:#50e4ce;}
+.level2{background:#4a87f6;}
+.level3{background:#fa9f47;}
+.level4{background:#fad247;}
+.level5{background:#5061e4;}
+.level6{background:#ac47fa;}
+.level .num{display:inline-block;}
+.level{border-radius:8px; -webkit-border-radius:8px; height:16px; line-height:16px;}
+.right .icons{display: inline-block;}
+.right .num{color:#8D8D8D; font-size:1.2rem;}
+.right .icon_live{position: relative;top: 6px;}
+
+/* vue过渡 */
+.fade-transition {
+  	
+}
+.fade-enter {
+  animation: fade-in .9s;
+}
+.fade-leave {
+  display: none;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+    .center .name{max-width: 75px; font-size:1.2rem;}
+}
+
+@media screen and (max-width: 420px) and (min-width: 371px){
+    .center .name{max-width:128px;}
+}
+
+@media screen and (max-width: 480px) and (min-width: 421px){
+    .center .name{max-width:178px;}
+}
+/* sprite */
+.icons{background:url(../images/icons.png?v3) no-repeat; background-size:281px 23px; display:block;}
+.icon_level_1{height:10px;width:10px;background-position:0 0;}
+.icon_level_2{height:10px;width:10px;background-position:-14px 0;}
+.icon_level_4{height:10px;width:10px;background-position:-30px 0;}
+.icon_level_5{height:10px;width:10px;background-position:-43px 0;}
+.icon_level_3{height:10px;width:10px;background-position:-56px 0;}
+.icon_level_6{height:10px;width:10px;background-position:-69px 0;}
+.icon_fans{height:10px;width:12px;background-position:-83px 0;}
+.icon_girl{height:15px;width:15px;background-position:-97px 0;}
+.icon_boy{height:15px;width:15px;background-position:-115px 0;}
+.icon_2{height:23px;width:28px;background-position:-134px 0;}
+.icon_3{height:23px;width:28px;background-position:-165px 0;}
+.icon_1{height:23px;width:28px;background-position:-197px 0;}
+.icon_live{height:20px;width:50px;background-position:-231px 0;}
+

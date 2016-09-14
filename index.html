@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>rank</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/vue.min.js"></script>
+</head>
+<body>
+    <!-- container -->
+    <div class="container" id="toggle">
+        <div class="tab">
+            <a href="javascript:;" v-for="item in tabBtns" class="tab-btn{{item.onClass}}" style="" v-on:click="toggleList">{{ item.text }}</a>
+            <div class="line" id='tab-line' v-bind:style="{left:lineLeft+'%'}"></div>
+        </div>
+        <!-- rank weekly -->
+        <ul class="ranks ranks-week" v-show="ranksWeekShow" transition="fade">
+            <li v-for="item in ranksWeek" class="rank rank-{{ $index+1 }}">
+                <!-- 前三名显示皇冠 -->
+                <div class="left"><i v-if="$index<3" class="icons icon_{{ $index+1 }}">1</i><span v-else>{{ $index+1 }}</span></div>
+                <div class="center">
+                    <div class="portrait"><img class="por-img" width="41" height="41" v-bind:src="'http://protrait.api.itsme.media/scaleimage.php?w=82&h=82&url='+item.uinfo.portrait"></div>
+                    <div class="name">{{ item.uinfo.nick }}</div>
+                    <div class="sex"><i class="icons icon_{{ item.uinfo.gender == 0? 'girl':'boy' }}"></i></div>
+                    <level :ulevel="item.uinfo.ulevel"></level>
+                </div>
+                <div class="right"><span class="num">{{ item.fans }}</span>
+                    <div class="icons icon_fans"></div>
+                </div>
+            </li>
+        </ul>
+        <!--/ rank weekly -->
+        <!-- rank total -->
+        <ul class="ranks ranks-total" v-show="!ranksWeekShow" transition="fade">
+            <li v-for="item in ranksAll" class="rank rank-{{ $index+1 }}">
+                <!-- 前三名显示皇冠 -->
+                <div class="left"><i v-if="$index<3" class="icons icon_{{ $index+1 }}">1</i><span v-else>{{ $index+1 }}</span></div>
+                <div class="center">
+                    <div class="portrait"><img class="por-img" width="41" height="41" v-bind:src="'http://protrait.api.itsme.media/scaleimage.php?w=82&h=82&url='+item.uinfo.portrait"></div>
+                    <div class="name">{{ item.uinfo.nick }}</div>
+                    <div class="sex"><i class="icons icon_{{ item.uinfo.gender == 0? 'girl':'boy' }}"></i></div>
+                    <level :ulevel="item.uinfo.ulevel"></level>
+                </div>
+                <div class="right"><span class="num">{{ item.fans }}</span>
+                    <div class="icons icon_fans"></div>
+                </div>
+            </li>
+        </ul>
+        <!--/ rank total -->
+    </div>
+    <!--/ container -->
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/app.js?v2"></script>
+</body>
+
+</html>
