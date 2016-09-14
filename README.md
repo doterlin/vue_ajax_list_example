@@ -1,5 +1,5 @@
 # vue_ajax_list_example
-一个简单的vue.js+Ajax+zepto可切换列表实例，在学习vuejs就找了这个例子重构了一下。
+一个简单的vue.js+Ajax+zepto可切换列表实例，在学习vuejs就找了这个例子重勾了一下。
 这个例子包含了vue.js的for,show ,if等命令，并写了一个小组件，结合zepto做了ajax数据交互演示，基本涵盖新手可能需要看到的示例点。写得不好，欢迎各位Issues。
 
 ## 下载
